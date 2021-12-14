@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { TodayPicturesGalleryComponent } from './pages/today-pictures-gallery/today-pictures-gallery.component';
+import { PicturesByDayGalleryComponent } from './pages/pictures-by-day-gallery/pictures-by-day-gallery.component';
 import { UserPicturesGalleryComponent } from './pages/user-pictures-gallery/user-pictures-gallery.component';
 
 @NgModule({
@@ -13,14 +13,11 @@ import { UserPicturesGalleryComponent } from './pages/user-pictures-gallery/user
     AppComponent,
     HomeComponent,
     ContactComponent,
-    TodayPicturesGalleryComponent,
-    UserPicturesGalleryComponent
+    PicturesByDayGalleryComponent,
+    UserPicturesGalleryComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
