@@ -4,3 +4,8 @@
 @import 'tailwindcss/utilities';
 
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  @apply bg-slate-900;
+  @apply text-slate-50;
+}

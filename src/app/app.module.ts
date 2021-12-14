@@ -7,6 +7,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PicturesByDayGalleryComponent } from './pages/pictures-by-day-gallery/pictures-by-day-gallery.component';
 import { UserPicturesGalleryComponent } from './pages/user-pictures-gallery/user-pictures-gallery.component';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { FooterComponent } from './components/layout/footer/footer.component';
+import { ErrorComponent } from './pages/error/error.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,9 @@ import { UserPicturesGalleryComponent } from './pages/user-pictures-gallery/user
     ContactComponent,
     PicturesByDayGalleryComponent,
     UserPicturesGalleryComponent,
+    HeaderComponent,
+    FooterComponent,
+    ErrorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
