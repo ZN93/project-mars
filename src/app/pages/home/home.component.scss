@@ -1,0 +1,5 @@
+.btn { @apply rounded py-2 px-4 border font-bold; }
+.btn-dark { @apply bg-white text-black border-white; }
+.btn-dark:hover { @apply text-white bg-black; }
+
+.card { @apply max-w-full mx-auto flex p-8 bg-gray-100 rounded shadow-2xl };
