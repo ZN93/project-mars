@@ -106,9 +106,21 @@
           "options": {
             "browserTarget": "elon-mars:build"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "elon-mars"
+  "defaultProject": "elon-mars",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
