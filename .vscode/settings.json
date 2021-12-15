@@ -1,9 +1,11 @@
 {
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
-  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  // "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.formatOnType": true,
   "files.associations": {
     "*.scss": "postcss"
-  }
+  },
+  "editor.rulers": [75],
+  "html.format.wrapLineLength": 75,
 }
