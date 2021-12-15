@@ -1,6 +1,7 @@
 {
   "name": "elon-mars",
   "version": "0.0.0",
+  "license": "",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

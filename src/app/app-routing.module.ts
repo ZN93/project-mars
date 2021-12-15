@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AppRoutes } from './app.routes';
 import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PicturesByDayGalleryComponent } from './pages/pictures-by-day-gallery/pictures-by-day-gallery.component';
@@ -10,27 +11,27 @@ import { ErrorComponent } from './pages/error/error.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: AppRoutes.home,
     pathMatch: 'full',
   },
   {
-    path: 'home',
+    path: AppRoutes.home,
     component: HomeComponent,
   },
   {
-    path: 'pictures-by-day-gallery',
+    path: AppRoutes.picturesByDayGallery,
     component: PicturesByDayGalleryComponent,
   },
   {
-    path: 'user-pictures-gallery',
+    path: AppRoutes.userPicturesGallery,
     component: UserPicturesGalleryComponent,
   },
   {
-    path: 'contact',
+    path: AppRoutes.contact,
     component: ContactComponent,
   },
   {
-    path: '**',
+    path: AppRoutes.unknownRoutes,
     component: ErrorComponent,
   },
 ];
