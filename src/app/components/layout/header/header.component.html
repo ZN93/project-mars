@@ -35,18 +35,18 @@
           <img
             [routerLink]="homeLink.path"
             class="block h-8 w-auto"
-            [src]="logoImgSrc"
-            alt="Workflow"
+            src="assets/img/whiteB.png"
+            alt="LogoElonMars"
           />
         </div>
-        <div class="grow hidden sm:block sm:ml-6">
-          <div class="flex justify-around space-x-4">
+        <div class="grow hidden sm:flex sm:ml-6">
+          <div class="flex justify-around items-center space-x-4 w-full">
             <a
               *ngFor="let link of links"
-              class="text-slate-300 hover:bg-slate-700 hover:text-slate-50 px-3 py-2 rounded-md text-sm font-medium"
+              class="text-slate-300 hover:bg-slate-700 hover:text-slate-50 px-3 py-2 rounded-md text-xs font-medium"
               [routerLink]="link.path"
               routerLinkActive="active-link"
-              [innerText]="link.linkText | titlecase"
+              [innerText]="link.linkText | uppercase"
             ></a>
           </div>
         </div>
