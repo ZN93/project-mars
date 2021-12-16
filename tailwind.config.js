@@ -11,6 +11,9 @@ module.exports = {
             cursor: {
                 'fancy': 'url(hand.cur), pointer'
             },
+            columns: {
+                //'4xs': '14rem',
+            },
         },
     },
     variants: {
