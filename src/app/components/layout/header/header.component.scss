@@ -1,3 +1,8 @@
 .active-link {
   @apply bg-slate-900 text-slate-50;
 }
+
+nav {
+  position: fixed;
+  width: 100%;
+}
