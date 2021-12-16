@@ -16,7 +16,7 @@ export class FooterComponent {
     },
     {
       path: AppRoutes.picturesByDayGallery,
-      linkText: 'gallery par jour',
+      linkText: 'gallerie par jour',
     },
     {
       path: AppRoutes.userPicturesGallery,
