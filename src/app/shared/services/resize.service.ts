@@ -28,26 +28,26 @@ export class ResizeService {
   }
 
   #updateBreakpointsOnResize(): void {
-    fromEvent(window, 'resize').subscribe(() => {
-      const width = window.innerWidth;
+    fromEvent(window, 'resize').subscribe(() => this.updateBreakPoints());
+  }
 
-      const isSm = width < TailwindBreakpoints.Sm;
-      const isMd = !isSm && width < TailwindBreakpoints.Md;
-      const isLg = !isMd && width < TailwindBreakpoints.Lg;
-      const isXl = !isLg && width < TailwindBreakpoints.Xl;
-      const is2Xl = !isXl && width < TailwindBreakpoints.DoubleXl;
-      const isOver2Xl = !is2Xl;
+  updateBreakPoints(): void {
+    const width = window.innerWidth;
 
-      this.#twBreakpoints = {
-        isSm,
-        isMd,
-        isLg,
-        isXl,
-        is2Xl,
-        isOver2Xl,
-      };
+    const isSm = width < TailwindBreakpoints.Sm;
+    const isMd = !isSm && width < TailwindBreakpoints.Md;
+    const isLg = !isMd && width < TailwindBreakpoints.Lg;
+    const isXl = !isLg && width < TailwindBreakpoints.Xl;
+    const is2Xl = !isXl && width < TailwindBreakpoints.DoubleXl;
+    const isOver2Xl = !is2Xl;
 
-      console.log(isLg);
-    });
+    this.#twBreakpoints = {
+      isSm,
+      isMd,
+      isLg,
+      isXl,
+      is2Xl,
+      isOver2Xl,
+    };
   }
 }
