@@ -1,0 +1,20 @@
+.footer {
+  &-container {
+    @apply flex flex-col-reverse md:flex-row;
+    @apply justify-between items-center;
+    @apply px-2 py-2 sm:px-6 lg:px-8;
+    @apply bg-slate-800;
+  }
+  &-links-container {
+    @apply flex flex-col sm:flex-row;
+    @apply items-stretch;
+    @apply space-y-1 sm:space-y-0 sm:space-x-4;
+  }
+  &-link {
+    @apply block;
+    @apply px-3 py-2;
+    @apply rounded-md;
+    @apply text-sm font-medium;
+    @apply text-slate-300 hover:bg-slate-700 hover:text-slate-50;
+  }
+}
