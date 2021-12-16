@@ -9,3 +9,93 @@ body {
   @apply bg-slate-900;
   @apply text-slate-50;
 }
+
+img {
+  @apply rounded-lg;
+}
+
+@layer components {
+  .btn {
+    @apply rounded py-2 px-4 border font-bold;
+  }
+
+  .btn-dark {
+    @apply bg-transparent text-white hover:text-black hover:bg-white border-white;
+  }
+
+  .h-screen-minus-t {
+    height: calc(100vh - 4rem);
+  }
+
+  .flex-st {
+    @apply flex justify-start items-start;
+  }
+
+  .flex-sc {
+    @apply flex justify-start items-center;
+  }
+
+  .flex-se {
+    @apply flex justify-start items-end;
+  }
+
+  .flex-ct {
+    @apply flex justify-center items-start;
+  }
+
+  .flex-cc {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-ce {
+    @apply flex justify-center items-end;
+  }
+
+  .flex-et {
+    @apply flex justify-end items-start;
+  }
+
+  .flex-ec {
+    @apply flex justify-end items-center;
+  }
+
+  .flex-ee {
+    @apply flex justify-end items-end;
+  }
+
+  .flex-col-st {
+    @apply flex flex-col justify-start items-start;
+  }
+
+  .flex-col-sc {
+    @apply flex flex-col justify-start items-center;
+  }
+
+  .flex-col-se {
+    @apply flex flex-col justify-start items-end;
+  }
+
+  .flex-col-ct {
+    @apply flex flex-col justify-center items-start;
+  }
+
+  .flex-col-cc {
+    @apply flex flex-col justify-center items-center;
+  }
+
+  .flex-col-ce {
+    @apply flex flex-col justify-center items-end;
+  }
+
+  .flex-col-et {
+    @apply flex flex-col justify-end items-start;
+  }
+
+  .flex-col-ec {
+    @apply flex flex-col justify-end items-center;
+  }
+
+  .flex-col-ee {
+    @apply flex flex-col justify-end items-end;
+  }
+}

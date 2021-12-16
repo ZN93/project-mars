@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { ResizeService } from './shared/services/resize.service';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -10,8 +14,9 @@ import { UserPicturesGalleryComponent } from './pages/user-pictures-gallery/user
 import { HeaderComponent } from './components/layout/header/header.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { ErrorComponent } from './pages/error/error.component';
-import { ResizeService } from './shared/services/resize.service';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ThumbnailViewComponent } from './components/thumbnail-view/thumbnail-view.component';
+import { ThumbnailItemComponent } from './components/thumbnail-item/thumbnail-item.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,8 +28,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HeaderComponent,
     FooterComponent,
     ErrorComponent,
+    ThumbnailViewComponent,
+    ThumbnailItemComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+    HttpClientModule,
+  ],
   providers: [ResizeService],
   bootstrap: [AppComponent],
 })
