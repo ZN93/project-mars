@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { ResizeService } from './shared/services/resize.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { ResizeService } from './shared/services/resize.service';
     FooterComponent,
     ErrorComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [ResizeService],
   bootstrap: [AppComponent],
 })
