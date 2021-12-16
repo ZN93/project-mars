@@ -1,18 +1,8 @@
-import { Component, HostListener } from '@angular/core';
-import { AppRoutes } from '../../../app.routes';
+import { Component } from '@angular/core';
 
-export enum TailwindScreenSize {
-  Sm = 640,
-  Md = 768,
-  Lg = 1024,
-  Xl = 1280,
-  DoubleXl = 1536,
-}
-
-export interface NavbarLink {
-  path: string;
-  linkText: string;
-}
+import { AppRoutes } from '@app-routes';
+import { ResizeService } from '@shared/services/resize.service';
+import { NavbarLink } from '@shared/models/navbar-link.model';
 
 @Component({
   selector: 'app-header',
@@ -47,21 +37,14 @@ export class HeaderComponent {
     return this.#links[0];
   }
 
-  @HostListener('window:resize')
-  private onResize(): void {
-    const width = window.innerWidth;
-    if (width < TailwindScreenSize.Sm) {
-      console.log('sm');
-    } else if (width < TailwindScreenSize.Md) {
-      console.log('md');
-    } else if (width < TailwindScreenSize.Lg) {
-      console.log('lg');
-    } else if (width < TailwindScreenSize.Xl) {
-      console.log('xl');
-    } else if (width < TailwindScreenSize.DoubleXl) {
-      console.log('2xl');
-    } else {
-      console.log('over 2xl');
-    }
+  get logoImgSrc(): string {
+    const { isLg, isXl, is2Xl, isOver2Xl } =
+      this.resizeService.twBreakpoints;
+
+    return isLg || isXl || is2Xl || isOver2Xl
+      ? 'https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg'
+      : 'https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg';
   }
+
+  constructor(private resizeService: ResizeService) {}
 }
