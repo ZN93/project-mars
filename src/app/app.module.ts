@@ -10,6 +10,7 @@ import { UserPicturesGalleryComponent } from './pages/user-pictures-gallery/user
 import { HeaderComponent } from './components/layout/header/header.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { ErrorComponent } from './pages/error/error.component';
+import { ResizeService } from './shared/services/resize.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { ErrorComponent } from './pages/error/error.component';
     ErrorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  providers: [ResizeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
