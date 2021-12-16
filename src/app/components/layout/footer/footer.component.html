@@ -1,1 +1,15 @@
-<p>footer works!</p>
+<nav class="footer-container">
+  <div
+    class="text-xs p-1"
+    [innerText]="copyRightsDeclaration | titlecase"
+  ></div>
+  <div class="footer-links-container">
+    <a
+      *ngFor="let link of links"
+      class="footer-link"
+      [routerLink]="link.path"
+      routerLinkActive="active-link"
+      [innerText]="link.linkText | titlecase"
+    ></a>
+  </div>
+</nav>
