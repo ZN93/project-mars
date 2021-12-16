@@ -17,6 +17,9 @@ img { @apply rounded-lg }
 
 .card { @apply max-w-full mx-auto flex p-8 bg-transparent rounded-xl shadow-2xl };
 .card2 { @apply max-w-full mx-auto flex p-2 bg-transparent rounded shadow-2xl };
+.card3 { @apply max-w-full mx-auto p-8 bg-opacity-0 bg-slate-900 rounded-xl shadow-2xl }
+.card4 { @apply max-w-full mx-auto p-8 bg-opacity-80 bg-slate-900 rounded-xl shadow-2xl }
+
 
 .div-size {
   height: calc(100vh - 4rem)
