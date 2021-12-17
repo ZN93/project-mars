@@ -14,9 +14,14 @@ export class MarsImagesService {
   readonly #apiUrl = '/mars-photos/api/v1/rovers/curiosity/photos';
   readonly #apiKey = 'r3x72x8gOvw0yqkDmrjqHu10JWItLGovv4P1Xdg8';
 
+  readonly #todayFormatted = this.dateToApiStringFormat(new Date());
+
   constructor(private readonly http: HttpClient) {}
 
-  getImages({ page = 1, earthDate = '2021-6-3' }): HttpMarsImagesDto {
+  getImages({
+    page = 1,
+    earthDate = this.#todayFormatted,
+  }): HttpMarsImagesDto {
     const params = `earth_date=${earthDate}&page=${page}&api_key=${
       this.#apiKey
     }`;
@@ -30,14 +35,14 @@ export class MarsImagesService {
           // En cas de réponse normale, on ne garde pas l'historique
           () => {},
           // Utiliser le localstorage pour stocker les modifications de favoris
-          (error: any) => {
+          (error: unknown) => {
             console.error('HTTP ERROR | ' + error);
           },
         ),
       );
   }
 
-  dateToApiFormatString(date: Date): string {
+  dateToApiStringFormat(date: Date): string {
     const year = date.getFullYear().toString();
     const month = (date.getMonth() + 1).toString();
     const day = date.getDate().toString();

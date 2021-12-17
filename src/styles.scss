@@ -66,8 +66,8 @@ img {
     @apply bg-transparent text-white hover:text-black hover:bg-white border-white;
   }
 
-  .h-screen-minus-t {
-    height: calc(100vh - 4rem);
+  .min-h-screen-minus-t {
+    min-height: calc(100vh - 4rem);
   }
 
   .wallpaper {

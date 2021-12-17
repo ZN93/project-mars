@@ -9,6 +9,11 @@ import { IMarsImagePhotoDto } from '@shared/models/mars-images-dto.model';
 })
 export class ThumbnailViewComponent implements OnInit {
   @Input() photos: IMarsImagePhotoDto[] = [];
+  @Input() emptyMessage = "Aucune photo n'a été trouvé pour cette date.";
+
+  get isEmpty(): boolean {
+    return this.photos.length <= 0;
+  }
 
   ngOnInit(): void {}
 }

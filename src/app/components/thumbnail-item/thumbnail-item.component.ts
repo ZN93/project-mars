@@ -10,9 +10,5 @@ import { IMarsImagePhotoDto } from '@shared/models/mars-images-dto.model';
 export class ThumbnailItemComponent implements OnInit {
   @Input() photo!: IMarsImagePhotoDto;
 
-  constructor() {}
-
-  ngOnInit(): void {
-    console.log(this.photo.earth_date);
-  }
+  ngOnInit(): void {}
 }

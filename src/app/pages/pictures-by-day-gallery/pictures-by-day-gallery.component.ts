@@ -11,7 +11,7 @@ import { MarsImagesService } from '../mars-images.service';
 })
 export class PicturesByDayGalleryComponent implements OnInit {
   readonly today = new Date();
-  selectedDate: Date | null = null;
+  selectedDate = this.today;
   photos: IMarsImagePhotoDto[] = [];
 
   constructor(private readonly marsImagesService: MarsImagesService) {}
@@ -21,12 +21,11 @@ export class PicturesByDayGalleryComponent implements OnInit {
   }
 
   fetchPhotos(): void {
-    if (!this.selectedDate) this.selectedDate = this.today;
-    const earthDate = this.marsImagesService.dateToApiFormatString(
-      this.selectedDate,
-    );
+    const selectedDateFormatted =
+      this.marsImagesService.dateToApiStringFormat(this.selectedDate);
+
     this.marsImagesService
-      .getImages({ page: 0, earthDate })
+      .getImages({ page: 0, earthDate: selectedDateFormatted })
       .subscribe(({ body }) => {
         if (body) this.photos = body.photos;
         else console.error('body null');
