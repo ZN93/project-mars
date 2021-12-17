@@ -7,17 +7,10 @@
         class="bg-amber-50 rounded-xl"
         [(selected)]="selectedDate"
         startView="month"
+        (selectedChange)="fetchPhotos()"
+        [maxDate]="today"
       ></mat-calendar>
     </div>
   </div>
-  <div class="flex-cc">
-    <div
-      class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 columns-auto"
-    >
-      <app-thumbnail-item
-        *ngFor="let photo of photos"
-        [photo]="photo"
-      ></app-thumbnail-item>
-    </div>
-  </div>
+  <app-thumbnail-view [photos]="photos"></app-thumbnail-view>
 </div>

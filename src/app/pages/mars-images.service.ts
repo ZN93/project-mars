@@ -36,4 +36,12 @@ export class MarsImagesService {
         ),
       );
   }
+
+  dateToApiFormatString(date: Date): string {
+    const year = date.getFullYear().toString();
+    const month = (date.getMonth() + 1).toString();
+    const day = date.getDate().toString();
+    console.warn(year, month, day);
+    return `${year}-${month}-${day}`;
+  }
 }

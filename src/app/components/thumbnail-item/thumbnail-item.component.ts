@@ -13,6 +13,6 @@ export class ThumbnailItemComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.photo.sol);
+    console.log(this.photo.earth_date);
   }
 }
