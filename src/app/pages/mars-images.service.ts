@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 
-import { IMarsImagesDto } from '@shared/models/mars-images-dto.model';
+import {
+  IMarsImagePhotoDto,
+  IMarsImagesDto,
+} from '@shared/models/mars-images-dto.model';
 
 type HttpMarsImagesDto = Observable<HttpResponse<IMarsImagesDto>>;
 
@@ -16,7 +19,13 @@ export class MarsImagesService {
 
   readonly #todayFormatted = this.dateToStringInApiFormat(new Date());
 
+  favoritePhotos: IMarsImagePhotoDto[] = [];
+
   constructor(private readonly http: HttpClient) {}
+
+  checkIfAddedToFavorite(photo: IMarsImagePhotoDto): boolean {
+    return this.favoritePhotos.includes(photo);
+  }
 
   getImages({
     page = 1,
