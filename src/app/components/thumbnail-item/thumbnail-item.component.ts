@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 import { IMarsImagePhotoDto } from '@shared/models/mars-images-dto.model';
 
@@ -7,8 +8,9 @@ import { IMarsImagePhotoDto } from '@shared/models/mars-images-dto.model';
   templateUrl: './thumbnail-item.component.html',
   styleUrls: ['./thumbnail-item.component.scss'],
 })
-export class ThumbnailItemComponent implements OnInit {
+export class ThumbnailItemComponent {
   @Input() photo!: IMarsImagePhotoDto;
+  saveIcon = faHeart;
 
   get takenBy(): string {
     return `by ${this.photo.rover.name} with ${this.photo.camera.name} camera`;
@@ -18,5 +20,7 @@ export class ThumbnailItemComponent implements OnInit {
     return `at ${this.photo.earth_date} (${this.photo.sol} sols)`;
   }
 
-  ngOnInit(): void {}
+  savePhoto(): void {
+    console.log('saved ' + this.photo.id);
+  }
 }
