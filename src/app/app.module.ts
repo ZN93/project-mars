@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { ResizeService } from './shared/services/resize.service';
 
@@ -16,7 +19,7 @@ import { FooterComponent } from './components/layout/footer/footer.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { ThumbnailViewComponent } from './components/thumbnail-view/thumbnail-view.component';
 import { ThumbnailItemComponent } from './components/thumbnail-item/thumbnail-item.component';
-import { HttpClientModule } from '@angular/common/http';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -33,11 +36,14 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    // BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     FontAwesomeModule,
-    HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  providers: [ResizeService],
+  providers: [ResizeService, MatDatepickerModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

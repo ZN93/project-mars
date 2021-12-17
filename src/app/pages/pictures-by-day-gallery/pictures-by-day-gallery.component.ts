@@ -10,6 +10,7 @@ import { MarsImagesService } from '../mars-images.service';
   styleUrls: ['./pictures-by-day-gallery.component.scss'],
 })
 export class PicturesByDayGalleryComponent implements OnInit {
+  selectedDate: Date | null = null;
   photos: IMarsImagePhotoDto[] = [];
 
   constructor(private readonly marsImagesService: MarsImagesService) {}
