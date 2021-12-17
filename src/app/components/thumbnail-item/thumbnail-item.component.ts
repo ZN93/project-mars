@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { MarsImagesService } from '@pages/mars-images.service';
 
 import { IMarsImagePhotoDto } from '@shared/models/mars-images-dto.model';
 
@@ -12,6 +13,8 @@ export class ThumbnailItemComponent {
   @Input() photo!: IMarsImagePhotoDto;
   saveIcon = faHeart;
 
+  constructor(private readonly marsImagesService: MarsImagesService) {}
+
   get takenBy(): string {
     return `by ${this.photo.rover.name} with ${this.photo.camera.name} camera`;
   }
@@ -20,7 +23,12 @@ export class ThumbnailItemComponent {
     return `at ${this.photo.earth_date} (${this.photo.sol} sols)`;
   }
 
+  get isAlreadyAddedToFavorite(): boolean {
+    return this.marsImagesService.checkIfAddedToFavorite(this.photo);
+  }
+
   savePhoto(): void {
-    console.log('saved ' + this.photo.id);
+    if (!this.isAlreadyAddedToFavorite)
+      this.marsImagesService.favoritePhotos.push(this.photo);
   }
 }
