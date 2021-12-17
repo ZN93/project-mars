@@ -17,15 +17,17 @@ export class PicturesByDayGalleryComponent implements OnInit {
   constructor(private readonly marsImagesService: MarsImagesService) {}
 
   ngOnInit(): void {
-    this.fetchPhotos();
+    this.fetchPhotosPerPage();
   }
 
-  fetchPhotos(): void {
-    const selectedDateFormatted =
-      this.marsImagesService.dateToApiStringFormat(this.selectedDate);
+  fetchPhotosPerPage(page = 1): void {
+    // formatted `selectedDate` for api param
+    const earthDate = this.marsImagesService.dateToStringInApiFormat(
+      this.selectedDate,
+    );
 
     this.marsImagesService
-      .getImages({ page: 0, earthDate: selectedDateFormatted })
+      .getImages({ page, earthDate })
       .subscribe(({ body }) => {
         if (body) this.photos = body.photos;
         else console.error('body null');

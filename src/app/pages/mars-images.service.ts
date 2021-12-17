@@ -14,7 +14,7 @@ export class MarsImagesService {
   readonly #apiUrl = '/mars-photos/api/v1/rovers/curiosity/photos';
   readonly #apiKey = 'r3x72x8gOvw0yqkDmrjqHu10JWItLGovv4P1Xdg8';
 
-  readonly #todayFormatted = this.dateToApiStringFormat(new Date());
+  readonly #todayFormatted = this.dateToStringInApiFormat(new Date());
 
   constructor(private readonly http: HttpClient) {}
 
@@ -42,7 +42,7 @@ export class MarsImagesService {
       );
   }
 
-  dateToApiStringFormat(date: Date): string {
+  dateToStringInApiFormat(date: Date): string {
     const year = date.getFullYear().toString();
     const month = (date.getMonth() + 1).toString();
     const day = date.getDate().toString();

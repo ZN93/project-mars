@@ -7,7 +7,7 @@
         class="bg-amber-50 rounded-xl"
         [(selected)]="selectedDate"
         startView="month"
-        (selectedChange)="fetchPhotos()"
+        (selectedChange)="fetchPhotosPerPage()"
         [maxDate]="today"
       ></mat-calendar>
     </div>
