@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import { MarsImagesService } from '@pages/mars-images.service';
+import { MarsImagesService } from '@shared/services/mars-images.service';
 
 import { IMarsImagePhotoDto } from '@shared/models/mars-images-dto.model';
 
@@ -13,7 +13,7 @@ export class ThumbnailItemComponent {
   @Input() photo!: IMarsImagePhotoDto;
   saveIcon = faHeart;
 
-  constructor(private readonly marsImagesService: MarsImagesService) {}
+  constructor(private readonly marsImagesService: MarsImagesService) { }
 
   get takenBy(): string {
     return `by ${this.photo.rover.name} with ${this.photo.camera.name} camera`;

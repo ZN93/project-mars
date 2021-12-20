@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        mars: "url('assets/img/mars2_reduced.jpg')",
+        mars: "url('assets/img/mars_mission.jpg')",
         'earth-horizon': "url('assets/img/earth_horizon.jpg')",
       },
     },

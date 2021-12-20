@@ -11,20 +11,20 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$elon-mars-primary: mat.define-palette(mat.$amber-palette);
-$elon-mars-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$project-mars-primary: mat.define-palette(mat.$amber-palette);
+$project-mars-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$elon-mars-warn: mat.define-palette(mat.$red-palette);
+$project-mars-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$elon-mars-theme: mat.define-light-theme(
+$project-mars-theme: mat.define-light-theme(
   (
     color: (
-      primary: $elon-mars-primary,
-      accent: $elon-mars-accent,
-      warn: $elon-mars-warn,
+      primary: $project-mars-primary,
+      accent: $project-mars-accent,
+      warn: $project-mars-warn,
     ),
   )
 );
@@ -32,7 +32,7 @@ $elon-mars-theme: mat.define-light-theme(
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($elon-mars-theme);
+@include mat.all-component-themes($project-mars-theme);
 
 /* Material import above */
 @import 'tailwindcss/base';

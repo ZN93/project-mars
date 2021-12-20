@@ -15,13 +15,13 @@ type HttpMarsImagesDto = Observable<HttpResponse<IMarsImagesDto>>;
 export class MarsImagesService {
   readonly #hostUrl = 'https://api.nasa.gov';
   readonly #apiUrl = '/mars-photos/api/v1/rovers/curiosity/photos';
-  readonly #apiKey = 'r3x72x8gOvw0yqkDmrjqHu10JWItLGovv4P1Xdg8';
+  readonly #apiKey = '1reXJ9z2wiCOzn3pxLLrMsmiVUFb8a7WQsGBLbaV';
 
   readonly #todayFormatted = this.dateToStringInApiFormat(new Date());
 
   favoritePhotos: IMarsImagePhotoDto[] = [];
 
-  constructor(private readonly http: HttpClient) {}
+  constructor(private readonly http: HttpClient) { }
 
   checkIfAddedToFavorite(photo: IMarsImagePhotoDto): boolean {
     return this.favoritePhotos.includes(photo);
@@ -31,9 +31,8 @@ export class MarsImagesService {
     page = 1,
     earthDate = this.#todayFormatted,
   }): HttpMarsImagesDto {
-    const params = `earth_date=${earthDate}&page=${page}&api_key=${
-      this.#apiKey
-    }`;
+    const params = `earth_date=${earthDate}&page=${page}&api_key=${this.#apiKey
+      }`;
 
     return this.http
       .get<IMarsImagesDto>(`${this.#hostUrl}${this.#apiUrl}?${params}`, {
@@ -42,7 +41,7 @@ export class MarsImagesService {
       .pipe(
         tap(
           // En cas de réponse normale, on ne garde pas l'historique
-          () => {},
+          () => { },
           // Utiliser le localstorage pour stocker les modifications de favoris
           (error: unknown) => {
             console.error('HTTP ERROR | ' + error);

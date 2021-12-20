@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { IMarsImagePhotoDto } from '@shared/models/mars-images-dto.model';
 
-import { MarsImagesService } from '../mars-images.service';
+import { MarsImagesService } from '../../shared/services/mars-images.service';
 
 @Component({
   selector: 'app-today-pictures-gallery',
@@ -14,7 +14,7 @@ export class PicturesByDayGalleryComponent implements OnInit {
   selectedDate = this.today;
   photos: IMarsImagePhotoDto[] = [];
 
-  constructor(private readonly marsImagesService: MarsImagesService) {}
+  constructor(private readonly marsImagesService: MarsImagesService) { }
 
   ngOnInit(): void {
     this.fetchPhotosPerPage();
